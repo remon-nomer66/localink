@@ -67,6 +67,7 @@ flutter:
     - assets/icon/sche_icon.png
     - assets/icon/talk_icon.png
     - assets/icon/mypage_icon.png
+    - assets/icon/app_logo.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

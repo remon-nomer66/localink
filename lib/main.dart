@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'splash_screen.dart';
 
 //地域情報を取得するためのアプリを作成する
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'link',
-      home: MyHomePage(title: 'localink'),
+      home: SplashScreen(),
     );
   }
 }
@@ -38,19 +39,25 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final appBarHeight = AppBar().preferredSize.height;
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              widget.title,
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 30,
-                fontFamily: 'klavika-medium',
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _selectedIndex = 0;  // ホームのインデックスに設定
+                });
+              },
+              child: Text(
+                widget.title,
+                style: const TextStyle(
+                  color: Colors.green,
+                  fontSize: 30,
+                  fontFamily: 'klavika-medium',
+                ),
               ),
             ),
             Stack(
@@ -58,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 ShaderMask(
                   shaderCallback: (Rect bounds) {
-                    return LinearGradient(
+                    return const LinearGradient(
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                       colors: [Colors.transparent, Colors.black],
@@ -70,14 +77,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       Colors.black.withOpacity(0.3),
                       BlendMode.darken,
                     ),
-                    child: Container(
+                    child: SizedBox(
                       width: MediaQuery.of(context).size.width * 0.5,
                       height: AppBar().preferredSize.height,
                       child: Image.asset('assets/images/miyazaki.png', fit: BoxFit.fill),
                     ),
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   right: 20,
                   child: Text(
                     '宮崎市',
@@ -96,24 +103,20 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: <Widget>[
+          children: const <Widget>[
             DrawerHeader(
-              child: Text('Drawer Header'),
               decoration: BoxDecoration(
                 color: Colors.green,
               ),
+              child: Text('Drawer Header'),
             ),
             ListTile(
               title: Text('Item 1'),
-              onTap: () {
-                Navigator.pop(context);
-              },
+              onTap: null,
             ),
             ListTile(
               title: Text('Item 2'),
-              onTap: () {
-                Navigator.pop(context);
-              },
+              onTap: null,
             ),
           ],
         ),
@@ -150,8 +153,8 @@ class _MyHomePageState extends State<MyHomePage> {
         unselectedItemColor: Colors.grey[400],
         showSelectedLabels: true,
         showUnselectedLabels: true,
-        selectedLabelStyle: TextStyle(fontSize: 10),
-        unselectedLabelStyle: TextStyle(fontSize: 10),
+        selectedLabelStyle: const TextStyle(fontSize: 10),
+        unselectedLabelStyle: const TextStyle(fontSize: 10),
         onTap: (index) {
           setState(() {
             _selectedIndex = index;
