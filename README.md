@@ -1,6 +1,6 @@
 # localink
 
-A new Flutter project.
+This is a regional super app that allows you to obtain local deals and emergency information.
 
 ## Getting Started
 
