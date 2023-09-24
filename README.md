@@ -2,15 +2,8 @@
 
 This is a regional super app that allows you to obtain local deals and emergency information.
 
-## Getting Started
+## current progress
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| ![Image 1](md_images/register01.png "register") | ![Image 2](md_images/home01.png "home") |
+|------------------------------------------------|----------------------------------------|
+| Set profile picture and login information| Obtain advisories/warnings, check posts by others         |
