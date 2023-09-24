@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:localink/registration_page.dart';
+import 'package:provider/provider.dart';
 import 'splash_screen.dart';
 
 //地域情報を取得するためのアプリを作成する
 void main() {
-  runApp(const MyApp());
+  runApp(
+    Provider<UserInfoProvider>(
+      create: (context) => UserInfoProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
